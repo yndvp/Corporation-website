@@ -1,0 +1,240 @@
+/** global **/
+body {
+    margin: 0 !important;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+
+/** header **/
+header {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background-color: #ff929285;
+}
+/** header - article **/
+header > article {
+    flex-grow: 1;
+    height: 90px;
+}
+header > article > img {
+    height: 100%;
+    width: auto;
+    padding-left: 15px;
+}
+/** header - nav **/
+header > nav > ul {
+    display: flex;
+    padding: 0;
+}
+header > nav > ul > li > a {
+    font-size: 16px;
+    padding: 10px 25px;
+    color: #2c1b1b;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    border-left: 2px solid #ff4f4f;
+}
+
+/** main **/
+/** main - section 1 **/
+main > section:nth-child(1) {
+    background-image: url(../img/celebrate.jpg);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+main > section:nth-child(1) > h1 {
+    margin: 0;
+    padding: 80px 160px;
+    background-color: #ffffffc7;
+    color: #d49c00;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 80px;
+    border-radius: 5px;
+}
+main > section:nth-child(1) > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main > section:nth-child(1) > div > p {
+    font-size: 50px;
+    color: #ffffff;
+    font-family: 'Abril Fatface', cursive;
+    border: 5px solid #d49c00;
+}
+main > section:nth-child(1) > div > a {
+    font-size: 40px;
+    text-align: center;
+    padding: 30px 80px;
+    background-color: #d49c00;
+    color: #ff3a3a;
+    font-family: 'Abril Fatface', cursive;
+}
+/** a hover effect **/
+main section:nth-child(1) > div > a:hover {
+    background-color: #d49b00c9;
+    cursor: pointer;
+}
+/** main - section 2 **/
+main > .second {
+    margin-top: 100px;
+    display: none;
+}
+main > .second > article {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    padding: 50px 0;
+}
+main > .second > article > div {
+    width: 50%;
+}
+main > .second > article > div:nth-child(1) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main > .second > article > div img {
+    width: 400px;
+    height: auto;
+}
+main > .second > article > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+}
+main > .second > article > div:nth-child(2) p{
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 50px;
+}
+main > .second > article > div:nth-child(2) a {
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+    font-size: 22px;
+    font-family: 'Abril Fatface', cursive;
+    background-color: #ff9292;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+/** hover effect on each article**/
+main > .second > article:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+/** hover effect on a tag**/
+main > .second > article > div:nth-child(2) a:hover {
+    background-color: #ff929285;
+}
+
+/** footer **/
+footer {
+    margin-top: 100px;
+    background-color: #2e1818;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+}
+footer > article {
+    width: 50%;
+    height: 90px;
+}
+footer > article > img{
+    padding-left: 15px;
+    width: auto;
+    height: 100%;
+}
+footer > nav {
+    width: 50%;
+}
+footer > nav li {
+    padding: 5px 0;
+}
+footer > nav a {
+    color: #ffffff;
+}
+footer > nav a:hover {
+    text-decoration: underline;
+}
+
+/** hide section 1 **/
+.hidden {
+    display: none;
+}
+
+/** add when scroll down **/
+.scroll-nav {
+    position: fixed;
+    width: 100%;
+    background-color: #ff9292;
+    top: 0;
+    z-index: 10;
+}
+
+/** bottom to top animation **/
+.bottom-top {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+}
+@-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+}
+  
+@keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+}
+
+/** responsive **/
+@media screen and (max-width: 1053px) {
+    main > section:nth-child(1) > h1 {
+        padding: 40px 80px;
+    }
+    main > section:nth-child(1) > div > p {
+        font-size: 40px;
+    }
+}
+@media screen and (max-width: 972px) {
+    main > .second > article {
+        flex-direction: column;
+    }
+    main > .second > article > div {
+        width: 100%;
+    }
+    main > .second > article > div:nth-child(2) {
+        align-items: center;
+    }
+}
+@media screen and (max-width: 724px) {
+    header {
+        flex-wrap: wrap;
+        height: 150px;
+        justify-content: center;
+    }
+    main > section:nth-child(1) > h1 {
+        padding: 10px 20px;
+    }
+    main > section:nth-child(1) > div > p {
+        font-size: 30px;
+    }
+}
+

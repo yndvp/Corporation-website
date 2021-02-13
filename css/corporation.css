@@ -1,0 +1,224 @@
+/** global **/
+body {
+    margin: 0 !important;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+
+/** header **/
+header {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background-color: #ff929285;
+}
+/** header - article **/
+header > article {
+    flex-grow: 1;
+    height: 90px;
+}
+header > article > img {
+    height: 100%;
+    width: auto;
+    padding-left: 15px;
+}
+/** header - nav **/
+header > nav > ul {
+    display: flex;
+    padding: 0;
+}
+header > nav > ul > li > a {
+    font-size: 16px;
+    padding: 10px 25px;
+    color: #2c1b1b;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    border-left: 2px solid #ff4f4f;
+}
+
+/** main **/
+/** main - masthead **/
+main > section.masthead {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../img/masthead.jpg);
+    background-size: cover;
+    height: 80vh;
+    margin-bottom: 100px;
+}
+main > section.masthead > div {
+    padding: 100px 300px;
+    background-color: rgba(0,0,0,0.3);
+    border: 2px solid #ffffff;
+}
+main > section.masthead > div > h1 {
+    margin: 0;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 80px;
+    letter-spacing: 5px;
+    color: #cc1414;
+}
+/** main - section 2 **/
+main > section.grid {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    height: 300px;
+}
+main > section.grid > article {
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main > section.grid > article > h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    color: #cc1414;
+    background-color: #ff8b8b52;
+    border: 2px solid #ffffff;
+    padding: 80px;
+}
+main > section.grid > article.global p {
+    padding: 0 30px;
+}
+main > section.grid > article.history ul {
+    padding: 0 30px;
+}
+main > section.grid > article.career ul {
+    padding: 0 30px;
+}
+main > section.grid > article:hover .overlap {
+    opacity: 1;
+}
+main > section.grid > article.history {
+    background-image: url(../img/history.jpg);
+    background-size: cover;
+}
+main > section.grid > article.campaign {
+    background-image: url(../img/campaign.jpg);
+    background-size: cover;
+}
+main > section.grid > article.global {
+    background-image: url(../img/global.jpg);
+    background-size: cover;
+}
+main > section.grid > article.career {
+    background-image: url(../img/career.jpg);
+    background-size: cover;
+}
+/** mouse hover effect **/
+.overlap {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #ffdada;
+    color:#2e1818;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .overlap ul, p {
+      text-align: center;
+  }
+
+/** bottom to top animation **/
+.bottom-top {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+}
+@-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+}
+  
+@keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+}
+
+/** add when scroll down **/
+.scroll-nav {
+    position: fixed;
+    width: 100%;
+    background-color: #ff9292;
+    top: 0;
+    z-index: 10;
+}
+
+/** footer **/
+footer {
+    margin-top: 100px;
+    background-color: #2e1818;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+}
+footer > article {
+    width: 50%;
+    height: 90px;
+}
+footer > article > img{
+    padding-left: 15px;
+    width: auto;
+    height: 100%;
+}
+footer > nav {
+    width: 50%;
+}
+footer > nav li {
+    padding: 5px 0;
+}
+footer > nav a {
+    color: #ffffff;
+}
+footer > nav a:hover {
+    text-decoration: underline;
+}
+
+/** responsive **/
+@media screen and (max-width: 1402px) {
+    main > section.grid {
+        grid-template-columns: repeat(2, 50% [col-start]);
+        grid-template-rows: auto;
+        height: auto;
+    }
+}
+@media screen and (max-width: 992px) {
+    main > section.masthead > div {
+        padding: 50px 100px;
+    }
+}
+@media screen and (max-width: 724px) {
+    header {
+        flex-wrap: wrap;
+        height: 150px;
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 710px) {
+    main > section.grid {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}

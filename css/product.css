@@ -1,0 +1,217 @@
+/** global **/
+body {
+    margin: 0 !important;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+
+/** header **/
+header {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background-color: #ff929285;
+}
+/** header - article **/
+header > article {
+    flex-grow: 1;
+    height: 90px;
+}
+header > article > img {
+    height: 100%;
+    width: auto;
+    padding-left: 15px;
+}
+/** header - nav **/
+header > nav > ul {
+    display: flex;
+    padding: 0;
+}
+header > nav > ul > li > a {
+    font-size: 16px;
+    padding: 10px 25px;
+    color: #2c1b1b;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    border-left: 2px solid #ff4f4f;
+}
+
+/** main **/
+main {
+    margin-top: 50px;
+}
+/** main - section 1 **/
+main > .products > div:nth-child(1) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+main > .products > div:nth-child(1) > h1 {
+    font-size: 38px;
+    font-family: 'Abril Fatface', cursive;
+    border-bottom: 5px dashed #e93333;
+    padding: 10px 200px;
+}
+main > .products > .container {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: auto;
+}
+main > .products > .container > article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+}
+main > .products > .container > article > a:nth-child(2) {
+    display: inline-block;
+    padding: 10px 0;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    color: #000000;
+    font-size: 22px;
+}
+main > .products > .container > article:hover > a:nth-child(2) {
+    color: #e93333;
+    text-decoration: underline;
+}
+main > .products > .container > article > a > img {
+    width: 250px;
+    height: 300px;
+}
+/** main - section 2 **/
+main > .services {
+    margin-top: 50px;
+}
+main > .services > div:nth-child(1) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+main > .services h1 {
+    font-size: 38px;
+    font-family: 'Abril Fatface', cursive;
+    border-bottom: 5px dashed #e93333;
+    padding: 10px 200px;
+}
+main > .services > .container2 > ul {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: auto;
+    align-items: center;
+    justify-content: center;
+}
+main > .services > .container2 > ul > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+main > .services > .container2 > ul a {
+    margin-top: 20px;
+    padding: 10px;
+    display: block;
+    font-family: 'Abril Fatface', cursive;
+    color: #e64b4b;
+    font-size: 22px;
+    text-align: center;
+}
+main > .services > .container2 > ul img {
+    width: 100px;
+    height: 100px;
+}
+/** hover effect **/
+.container2 li:hover {
+    background: rgba(0,0,0,0.2);
+    border-radius: 50px;
+}
+.container2 li a:hover {
+    text-decoration: underline;
+}
+
+/** footer **/
+footer {
+    margin-top: 100px;
+    background-color: #2e1818;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+}
+footer > article {
+    width: 50%;
+    height: 90px;
+}
+footer > article > img{
+    padding-left: 15px;
+    width: auto;
+    height: 100%;
+}
+footer > nav {
+    width: 50%;
+}
+footer > nav li {
+    padding: 5px 0;
+}
+footer > nav a {
+    color: #ffffff;
+}
+footer > nav a:hover {
+    text-decoration: underline;
+}
+
+/** add when scroll down **/
+.scroll-nav {
+    position: fixed;
+    width: 100%;
+    background-color: #ff9292;
+    top: 0;
+    z-index: 10;
+}
+
+/** bottom to top animation **/
+.bottom-top {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+}
+@-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+}
+  
+@keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+}
+
+/** responsive **/
+@media screen and (max-width: 1024px) {
+    main > .products > .container {
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: auto;
+    }
+}
+@media screen and (max-width: 724px) {
+    header {
+        flex-wrap: wrap;
+        height: 150px;
+        justify-content: center;
+    }
+    main > .services > .container2 > ul {
+        grid-template-columns: repeat(1, 100%);
+        grid-template-rows: auto;
+    }
+}
